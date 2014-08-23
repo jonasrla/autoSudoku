@@ -1,0 +1,26 @@
+<head>
+  <title>autoSudoku</title>
+</head>
+
+<body>
+  {{> hello}}
+  {{> sudoku}}
+</body>
+
+<template name="hello">
+  <h1>Hello World!</h1>
+  {{greeting}}
+  <input type="button" value="Click" />
+</template>
+
+<template name="sudoku">
+	<table>
+		{{#each rows}}
+			<tr>
+				{{#each data}}
+					<td>{{number}}</td>
+				{{/each}}
+			</tr>
+		{{/each}}
+	</table>
+</template>
