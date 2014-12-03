@@ -66,10 +66,10 @@ function finished(table){
 	return true;
 }
 
-function findMinimunPossibitiesUnchecked(table){
-	minimum = table[0][0][0].length;
-	xMinimum = 0;
-	yMinimum = 0;
+function findMinimumPossibilitiesUnchecked(table){
+	var minimum = 9;
+	var xMinimum = 0;
+	var yMinimum = 0;
 	for (var i = 0; i < 9; i++){
 		for (var j = 0; j < 9; j++){
 			if (minimum < table[i][j][0].length){
