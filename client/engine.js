@@ -52,7 +52,7 @@ function getSubtable(x,y){
 			result.push([xPosition[i],yPosition[j]]);
 		}
 	}
-	return result
+	return result;
 }
 
 function finished(table){
