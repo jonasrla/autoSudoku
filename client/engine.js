@@ -72,14 +72,14 @@ function findMinimumPossibilitiesUnchecked(table){
 	var yMinimum = 0;
 	for (var i = 0; i < 9; i++){
 		for (var j = 0; j < 9; j++){
-			if (minimum < table[i][j][0].length){
+			if (minimum > table[i][j][0].length && !table[i][j][1]){
 				minimum = table[i][j][0].length;
 				xMinimum = i;
 				yMinimum = j;
 			}
 		}
 	}
-	return [i,j];
+	return [xMinimum,yMinimum];
 }
 
 function createTable(){
