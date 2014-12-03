@@ -107,5 +107,52 @@ function putTable(table){
 		}
 		output += "            <tr>\n";
 	}
-	HtmlTable.innerHTML = output
+	HtmlTable.innerHTML = output;
+}
+
+function createTable(){
+	return doTheMagic(fillTable(), 0);
+}
+
+function getBlock(table){
+	if (!finished(table)){
+		return findMinimumPossibilitiesUnchecked(table);
+	}
+	return undefined;
+}
+
+function copy(table){
+	var result = [];
+	for (var i = 0; i < table.length; i++){
+		result[i] = table[i].slice(0);
+	}
+	return result;
+}
+
+function doTheMagic(table, escopo){
+	var i, j, trialTable, value, block, result, positionValue;
+	block = getBlock(table);
+	if (block){
+		var i = block[0];
+		var j = block[1];
+		possibleEntries = table[i][j][0].slice(0);
+		while (possibleEntries.length > 0){
+			var positionValue = Math.floor((Math.random() * possibleEntries.length))
+			var value = possibleEntries[positionValue];
+			var trialTable = updateTable(i, j, value, table);
+			var result = doTheMagic(trialTable, escopo+1);
+			putTable(table);
+			if (result !== undefined){
+				return result;
+			}
+			console.log("Failed", escopo,i,j,value);
+			possibleEntries.splice(positionValue,1);
+			console.log(possibleEntries);
+			console.log(trialTable[i][j][0]);
+			console.log(table[i][j][0]);
+			alert()
+		}
+		return undefined;
+	}
+	return table;
 }
