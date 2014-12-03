@@ -34,13 +34,13 @@ function updateTable(x, y, value, otable){
 }
 
 function removeFromList(value,lista){
-	var index = list[0].indexOf(value);
+	var index = lista.indexOf(value);
 	if (index == -1){
-		return list;
+		return lista;
 	}
 	else {
-		list[0].splice(index,1);
-		return list
+		lista.splice(index,1);
+		return lista;
 	}
 }
 function getSubtable(x,y){
