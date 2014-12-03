@@ -56,13 +56,14 @@ function getSubtable(x,y){
 }
 
 function finished(table){
-	resultFlag = false;
 	for (var i = 0; i < 9; i++){
 		for (var j = 0; j < 9; j++){
-			resultFlag |= table[i][j][1];
+			if (!table[i][j][1]){
+				return false;
+			}
 		}
 	}
-	return resultFlag;
+	return true;
 }
 
 function findMinimunPossibitiesUnchecked(table){
