@@ -97,14 +97,15 @@ function findMinimumPossibilitiesUnchecked(table){
 // }
 
 function putTable(table){
-	HtmlTable = document.getElementById("table")
-	var output = ""
+	var HtmlTable;
+	HtmlTable = document.getElementById("table");
+	var output = "";
 	for (var i = 0; i < 9; i++){
-		output += "            <tr>\n"
+		output += "            <tr>\n";
 		for (var j = 0; j < 9; j++){
-			output += "                <td>"+table[i][j]+"</td>\n"
+			output += "                <td>"+table[i][j]+"</td>\n";
 		}
-		output += "            <tr>\n"
+		output += "            <tr>\n";
 	}
 	HtmlTable.innerHTML = output
 }
