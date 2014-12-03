@@ -82,22 +82,19 @@ function findMinimumPossibilitiesUnchecked(table){
 	return [xMinimum,yMinimum];
 }
 
-function createTable(){
-	table = fillTable()
-	while (!finished()){
-		minimum = findMinimunPossibilitiesUnchecked(table)
-		i = minimum[0]
-		j = minimum[1]
-		positionValue = Math.floor((Math.random() * table[i][j][0].length));
-		table = updateTab(i,j,positionValue,table);
-		alert()
-		putTable(table)
-	}
+// function createTable(){
+// 	table = fillTable();
+// 	while (!finished(table)){
+// 		minimum = findMinimumPossibilitiesUnchecked(table);
+// 		i = minimum[0];
+// 		j = minimum[1];
+// 		positionValue = Math.floor((Math.random() * table[i][j][0].length));
+// 		table = updateTable(i,j,positionValue,table);
+// 		putTable(table);
+// 	}
 
-	return table
-}
-
-function
+// 	return table;
+// }
 
 function putTable(table){
 	HtmlTable = document.getElementById("table")
