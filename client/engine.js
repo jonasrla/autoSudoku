@@ -8,9 +8,10 @@ function fillTable() {
 	return table;
 }
 
-function updateTable(x, y, positionValue, table){
-	value = table[x][y][positionValue]
+function updateTable(x, y, value, otable){
+	table = copy(otable);
 	table[x][y] = [[value],true];
+	console.log(x,y,value);
 	for (var i = 0; i < 9; i++){
 		if (i != y){
 			table[x][i][0] = removeFromList(value, table[x][i][0]);
@@ -26,10 +27,10 @@ function updateTable(x, y, positionValue, table){
 		var xPosition = subtable[i][0];
 		var yPosition = subtable[i][1];
 		if (xPosition != x && yPosition != y){
-			tab[xPosition][yPosition][0] = removeFromList(value, tab[xPosition][yPosition][0]);
+			table[xPosition][yPosition][0] = removeFromList(value, table[xPosition][yPosition][0]);
 		}
 	}
-	return tab;
+	return table;
 }
 
 function removeFromList(value,lista){
